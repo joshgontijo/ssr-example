@@ -1,9 +1,0 @@
-scp balance/Dockerfile balance/target/balance.war ubuntu@docker1.me:~/registry-example/balance
-scp account/Dockerfile account/target/account.war ubuntu@docker1.me:~/registry-example/account
-scp docker-compose.yml ubuntu@docker1.me:~/registry-example
-
-docker build -t balance balance/
-docker build -t account account/
-
-docker run -it -d -p 8081:8080 --name acc -e serviceUrl=http://192.168.0.7:8081/account -e registryUrl=http://192.168.0.7:8080 account
-docker run -it -d -p 8082:8080 --name bal -e serviceUrl=http://192.168.0.7:8082/balance -e registryUrl=http://192.168.0.7:8080 balance

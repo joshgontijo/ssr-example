@@ -1,2 +1,2 @@
 FROM jboss/wildfly
-ADD balance.war /opt/jboss/wildfly/standalone/deployments/
+ADD target/balance.war /opt/jboss/wildfly/standalone/deployments/

@@ -29,7 +29,7 @@ public class AccountResournce {
     }
 
     private String getAddress() {
-        ServiceConfig serviceConfig = serviceStore.getAny(BALANCE_SERVICE);
+        ServiceConfig serviceConfig = serviceStore.get(BALANCE_SERVICE);
         if (serviceConfig == null) {
             return "NO_ADDRESS_SERVICE";
         }
