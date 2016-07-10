@@ -31,7 +31,7 @@ public class AccountResournce {
     private String getAddress() {
         ServiceConfig serviceConfig = serviceStore.get(BALANCE_SERVICE);
         if (serviceConfig == null) {
-            return "NO_ADDRESS_SERVICE";
+            return "NO_BALANCE_SERVICE";
         }
 
         Response response = ClientBuilder.newClient()
