@@ -1,6 +1,7 @@
 package com.josue.micro.address;
 
-import com.josue.micro.registry.client.discovery.EnableDiscovery;
+
+import com.josue.micro.registry.jee7.EnableDiscovery;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

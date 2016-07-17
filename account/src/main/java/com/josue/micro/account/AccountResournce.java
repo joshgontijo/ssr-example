@@ -1,6 +1,6 @@
 package com.josue.micro.account;
 
-import com.josue.micro.registry.client.ServiceConfig;
+import com.josue.micro.registry.client.ServiceInstance;
 import com.josue.micro.registry.client.ServiceStore;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -25,17 +25,17 @@ public class AccountResournce {
 
     @GET
     public String getAccount() {
-        return "Account -> " + getAddress();
+        return "Account -> " + getBalance();
     }
 
-    private String getAddress() {
-        ServiceConfig serviceConfig = serviceStore.get(BALANCE_SERVICE);
-        if (serviceConfig == null) {
+    private String getBalance() {
+        ServiceInstance instance = serviceStore.get(BALANCE_SERVICE);
+        if (instance == null) {
             return "NO_BALANCE_SERVICE";
         }
 
         Response response = ClientBuilder.newClient()
-                .target(serviceConfig.getAddress())
+                .target(instance.getAddress())
                 .path(BALANCE_RESOURCE_PATH)
                 .request()
                 .get();
