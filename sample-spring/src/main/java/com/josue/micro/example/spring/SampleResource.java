@@ -1,7 +1,7 @@
 package com.josue.micro.example.spring;
 
-import com.josue.micro.registry.client.ServiceInstance;
 import com.josue.micro.registry.client.ServiceStore;
+import com.josue.ssr.common.Instance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -29,7 +29,7 @@ public class SampleResource {
     }
 
     private String getBalance() {
-        ServiceInstance instance = serviceStore.get(serviceName);
+        Instance instance = serviceStore.get(serviceName);
         if (instance == null) {
             return "NO_BALANCE_SERVICE";
         }

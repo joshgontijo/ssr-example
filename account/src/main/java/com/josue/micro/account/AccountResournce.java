@@ -1,7 +1,7 @@
 package com.josue.micro.account;
 
-import com.josue.micro.registry.client.ServiceInstance;
 import com.josue.micro.registry.client.ServiceStore;
+import com.josue.ssr.common.Instance;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -29,7 +29,7 @@ public class AccountResournce {
     }
 
     private String getBalance() {
-        ServiceInstance instance = serviceStore.get(BALANCE_SERVICE);
+        Instance instance = serviceStore.get(BALANCE_SERVICE);
         if (instance == null) {
             return "NO_BALANCE_SERVICE";
         }
