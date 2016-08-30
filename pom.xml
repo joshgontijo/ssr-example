@@ -11,6 +11,7 @@
         <module>account</module>
         <module>balance</module>
         <module>sample-spring</module>
+        <module>gateway</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 /**
  * Created by Josue on 23/06/2016.
  */
-@Path("accounts")
+@Path("/")
 @ApplicationScoped
 public class AccountResournce {
 
