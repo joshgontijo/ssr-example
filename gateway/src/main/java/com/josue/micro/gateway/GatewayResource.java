@@ -7,7 +7,9 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 /**
@@ -15,7 +17,7 @@ import javax.ws.rs.core.Response;
  */
 @Path("gateway")
 @ApplicationScoped
-public class AccountResournce {
+public class GatewayResource {
 
     private static final String BALANCE_SERVICE = "balance";
     private static final String BALANCE_SERVICE_RESOURCE = "balances";
@@ -27,6 +29,7 @@ public class AccountResournce {
     private ServiceStore serviceStore;
 
     @GET
+    @Produces(MediaType.TEXT_PLAIN)
     public String gateway() {
         String response = "Calling '" + BALANCE_SERVICE + "'... response: " + callService(BALANCE_SERVICE, BALANCE_SERVICE_RESOURCE);
         response += "\nCalling '" + ACCOUNT_SERVICE + "'... response: " + callService(ACCOUNT_SERVICE, ACCOUNT_SERVICE_RESOURCE);

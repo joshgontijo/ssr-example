@@ -7,13 +7,15 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 /**
  * Created by Josue on 23/06/2016.
  */
-@Path("/")
+@Path("accounts")
 @ApplicationScoped
 public class AccountResournce {
 
@@ -24,6 +26,7 @@ public class AccountResournce {
     private ServiceStore serviceStore;
 
     @GET
+    @Produces(MediaType.TEXT_PLAIN)
     public String getAccount() {
         return "Account -> " + getBalance();
     }
