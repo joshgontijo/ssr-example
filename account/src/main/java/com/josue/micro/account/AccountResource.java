@@ -17,7 +17,7 @@ import javax.ws.rs.core.Response;
  */
 @Path("accounts")
 @ApplicationScoped
-public class AccountResournce {
+public class AccountResource {
 
     private static final String BALANCE_SERVICE = "balance";
     private static final String BALANCE_RESOURCE_PATH = "balances";
@@ -27,11 +27,15 @@ public class AccountResournce {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String getAccount() {
+    public String getAccount() throws InterruptedException {
+        Thread.sleep(5000);
         return "Account -> " + getBalance();
     }
 
-    private String getBalance() {
+    private String getBalance()  {
+
+
+
         Instance instance = serviceStore.get(BALANCE_SERVICE);
         if (instance == null) {
             return "NO_BALANCE_SERVICE";
